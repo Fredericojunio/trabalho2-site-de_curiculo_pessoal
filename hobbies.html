@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-mz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frederico Albino Junior | Hobbies</title>
+  <meta name="description" content="Hobbies e interesses pessoais de Frederico Albino Junior.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="cabecalho__container">
+      <p class="cabecalho__logo">Frederico <span>Albino Junior</span></p>
+      <nav aria-label="Navegação principal">
+        <ul class="menu-principal">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="about.html">Currículo</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="hobbies.html" class="ativo" aria-current="page">Hobbies</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <h1>Hobbies &amp; Interesses</h1>
+    <p>Fora da programação, estas são as atividades que mais me interessam. Secção construída com Flexbox.</p>
+
+    <section aria-labelledby="hobbies-titulo" style="margin-top:2rem;">
+      <h2 id="hobbies-titulo" class="titulo-secao">O que gosto de fazer</h2>
+
+      <div class="lista-hobbies">
+
+        <article class="card-hobby">
+          <i class="fa-solid fa-futbol icone-hobby" aria-hidden="true"></i>
+          <h3>Futebol</h3>
+          <p>Jogo com os amigos aos fins de semana e sigo os campeonatos nacionais e internacionais.</p>
+        </article>
+
+        <article class="card-hobby">
+          <i class="fa-solid fa-book-open icone-hobby" aria-hidden="true"></i>
+          <h3>Leitura</h3>
+          <p>Gosto de ler sobre tecnologia, ficção científica e desenvolvimento pessoal.</p>
+        </article>
+
+        <article class="card-hobby">
+          <i class="fa-solid fa-music icone-hobby" aria-hidden="true"></i>
+          <h3>Música</h3>
+          <p>Ouço vários géneros musicais e estou a aprender a tocar violão nos tempos livres.</p>
+        </article>
+
+        <article class="card-hobby">
+          <i class="fa-solid fa-camera icone-hobby" aria-hidden="true"></i>
+          <h3>Fotografia</h3>
+          <p>Fotografo paisagens e momentos do dia a dia com o telemóvel, explorando composição e luz.</p>
+        </article>
+
+        <article class="card-hobby">
+          <i class="fa-solid fa-gamepad icone-hobby" aria-hidden="true"></i>
+          <h3>Jogos digitais</h3>
+          <p>Jogo videojogos de estratégia e aproveito para pensar em lógica e resolução de problemas.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section aria-labelledby="playlist-titulo">
+      <h2 id="playlist-titulo" class="titulo-secao">Uma faixa que gosto de ouvir a programar</h2>
+      <p>Um pequeno excerto instrumental que costumo ouvir enquanto estudo ou programo.</p>
+      <div class="bloco-audio">
+        <audio controls>
+          <source src="assets/audio/musica-favorita.mp3" type="audio/mpeg">
+          <source src="assets/audio/musica-favorita.ogg" type="audio/ogg">
+          O seu navegador não suporta a reprodução de áudio HTML5.
+        </audio>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__container">
+      <div>
+        <h2 style="color:#fff; font-size:1.1rem;">Contactos</h2>
+        <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:frederico.albino@exemplo.com">frederico.albino@exemplo.com</a></p>
+        <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+258840000000">+258 84 000 0000</a></p>
+      </div>
+      <div>
+        <h2 style="color:#fff; font-size:1.1rem;">Redes sociais</h2>
+        <div class="rodape__redes">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <p class="rodape__assinatura">Desenvolvido por Frederico Albino Junior</p>
+    </div>
+  </footer>
+
+</body>
+</html>

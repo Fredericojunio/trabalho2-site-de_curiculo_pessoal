@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-mz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frederico Albino Junior | Contacto</title>
+  <meta name="description" content="Formulário de contacto de Frederico Albino Junior.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="cabecalho__container">
+      <p class="cabecalho__logo">Frederico <span>Albino Junior</span></p>
+      <nav aria-label="Navegação principal">
+        <ul class="menu-principal">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="about.html">Currículo</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="contact.html" class="ativo" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <h1>Entre em Contacto</h1>
+
+    <aside class="aside-contacto" aria-labelledby="aside-titulo">
+      <h2 id="aside-titulo" style="font-size:1.05rem;">Antes de enviar</h2>
+      <p>Preencha o formulário abaixo com os seus dados. Todos os campos assinalados como obrigatórios
+      precisam de ser preenchidos corretamente — a validação é feita nativamente pelo navegador (HTML5),
+      sem recurso a JavaScript.</p>
+    </aside>
+
+    <form class="formulario-contacto" action="#" method="post" novalidate>
+
+      <fieldset>
+        <legend>Dados pessoais</legend>
+
+        <div class="campo">
+          <label for="nome">Nome completo <span aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Escreva o seu nome"
+            required
+            minlength="3"
+            maxlength="80">
+        </div>
+
+        <div class="campo">
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="nome@exemplo.com"
+            required>
+        </div>
+
+        <div class="campo">
+          <label for="telefone">Telefone</label>
+          <input
+            type="tel"
+            id="telefone"
+            name="telefone"
+            placeholder="+258 84 000 0000"
+            pattern="^\+?[0-9]{9,13}$"
+            title="Introduza um número de telefone válido, ex: +258840000000">
+        </div>
+
+        <div class="campo">
+          <label for="data-contacto">Data preferida de contacto</label>
+          <input
+            type="date"
+            id="data-contacto"
+            name="data-contacto"
+            min="2026-09-02">
+        </div>
+
+        <div class="campo">
+          <label for="idade">Idade</label>
+          <input
+            type="number"
+            id="idade"
+            name="idade"
+            min="15"
+            max="99"
+            step="1"
+            placeholder="Ex: 20">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Anexos e preferências</legend>
+
+        <div class="campo">
+          <label for="ficheiro">Anexar CV ou portfólio (PDF)</label>
+          <input
+            type="file"
+            id="ficheiro"
+            name="ficheiro"
+            accept=".pdf,.doc,.docx">
+        </div>
+
+        <div class="campo">
+          <label for="assunto">Assunto</label>
+          <select id="assunto" name="assunto" required>
+            <option value="">Selecione um assunto</option>
+            <option value="proposta-trabalho">Proposta de trabalho</option>
+            <option value="colaboracao">Colaboração em projeto</option>
+            <option value="duvida">Dúvida académica</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <span>Como prefere ser contactado? <span aria-hidden="true">*</span></span>
+          <div class="grupo-opcoes">
+            <label class="opcao">
+              <input type="radio" name="preferencia-contacto" value="email" required> Email
+            </label>
+            <label class="opcao">
+              <input type="radio" name="preferencia-contacto" value="telefone"> Telefone
+            </label>
+            <label class="opcao">
+              <input type="radio" name="preferencia-contacto" value="whatsapp"> WhatsApp
+            </label>
+          </div>
+        </div>
+
+        <div class="campo">
+          <span>Áreas de interesse</span>
+          <div class="grupo-opcoes">
+            <label class="opcao">
+              <input type="checkbox" name="interesses" value="frontend"> Front-end
+            </label>
+            <label class="opcao">
+              <input type="checkbox" name="interesses" value="backend"> Back-end
+            </label>
+            <label class="opcao">
+              <input type="checkbox" name="interesses" value="design"> Design UI/UX
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Mensagem</legend>
+        <div class="campo">
+          <label for="mensagem">A sua mensagem <span aria-hidden="true">*</span></label>
+          <textarea
+            id="mensagem"
+            name="mensagem"
+            placeholder="Escreva aqui a sua mensagem..."
+            required
+            minlength="10"
+            maxlength="500"
+            rows="6"></textarea>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn-enviar">
+        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar mensagem
+      </button>
+    </form>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__container">
+      <div>
+        <h2 style="color:#fff; font-size:1.1rem;">Contactos</h2>
+        <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:frederico.albino@exemplo.com">frederico.albino@exemplo.com</a></p>
+        <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+258840000000">+258 84 000 0000</a></p>
+      </div>
+      <div>
+        <h2 style="color:#fff; font-size:1.1rem;">Redes sociais</h2>
+        <div class="rodape__redes">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <p class="rodape__assinatura">Desenvolvido por Frederico Albino Junior</p>
+    </div>
+  </footer>
+
+</body>
+</html>
