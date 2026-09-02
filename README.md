@@ -1,4 +1,4 @@
-# trabalho2-site-de_curiculo_pessoal# Site de Currículo Pessoal — Frederico Albino Junior
+# Site de Currículo Pessoal — Frederico Albino Junior
 
 ## Estudante
 - **Nome completo:** Frederico Albino Junior
@@ -82,4 +82,36 @@ meu-curriculo/
   no topo de `css/estilo.css`.
 
 ### CSS3 — seletores e pseudo-classes/elementos
-- Seletor descendente, filho direto (`>`), irmão adjacente (`+`) e 
+- Seletor descendente, filho direto (`>`), irmão adjacente (`+`) e seletor de atributo
+  (`input[type="email"]`) — usados para estilizar o formulário e o menu sem adicionar classes extra.
+- `:hover`, `:focus`, `:first-child`, `:last-child`, `:nth-child()` — usados em links, cartões e na
+  tabela de competências (zebra striping).
+- `::before` e `::after` — usados como elementos decorativos no título das secções e no indicador do
+  link ativo do menu.
+
+### CSS3 — estilo visual
+- **Variáveis CSS** (`:root { --cor-primaria: ... }`) — centralizam cores, espaçamentos e fontes.
+- **`transition`** — suaviza o efeito hover nos cartões e botões.
+- **`@keyframes`** — cria uma animação discreta de flutuação no avatar da Home.
+- **`linear-gradient`** e **`box-shadow`/`text-shadow`** — usados no cabeçalho, botões e cartões para
+  dar profundidade visual.
+- **Tipografia**: `Poppins` (títulos) e `Inter` (corpo de texto), importadas via Google Fonts, com
+  pilha de alternativas (`font-family: 'Poppins', 'Segoe UI', Arial, sans-serif`).
+
+### Responsividade
+- Meta viewport (`<meta name="viewport" content="width=device-width, initial-scale=1.0">`) em todas
+  as páginas.
+- Abordagem **mobile-first**: estilos base pensados para ecrã pequeno em `estilo.css`, ampliados em
+  `responsivo.css` com media queries em `max-width: 480px` (telemóvel), `max-width: 768px` (tablet) e
+  `min-width: 1024px` / `min-width: 1440px` (desktop/ecrãs largos).
+- Combinação de unidades relativas (`rem`, `%`, `vw`, `vh`) com unidades fixas (`px`), justificada
+  caso a caso nos comentários do CSS.
+
+## Ferramentas externas permitidas
+- **Google Fonts** — famílias `Poppins` e `Inter`, importadas via `<link>`.
+- **Font Awesome (CDN)** — ícones usados no rodapé e nos botões (não é um framework de layout).
+
+## Sobre o repositório
+Este repositório deve ser publicado com histórico de commits que reflita a evolução real do
+desenvolvimento (estrutura inicial → páginas HTML → estilos base → responsividade → refinamentos),
+e não como um único commit final.

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-mz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frederico Albino Junior | Início — Currículo Pessoal</title>
+  <meta name="description" content="Site pessoal de currículo de Frederico Albino Junior, estudante de Informática.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="cabecalho__container">
+      <p class="cabecalho__logo">Frederico <span>Albino Junior</span></p>
+      <nav aria-label="Navegação principal">
+        <ul class="menu-principal">
+          <li><a href="index.html" class="ativo" aria-current="page">Início</a></li>
+          <li><a href="about.html">Currículo</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="hero__texto">
+        <h1 id="hero-titulo">Olá, chamo-me Frederico Albino Junior</h1>
+        <p class="tagline">Estudante de Informática &mdash; a construir soluções web com HTML5 e CSS3 puro.</p>
+        <p>
+          Sou estudante do curso de Licenciatura em Informática, apaixonado por desenvolvimento web,
+          organização de interfaces e boas práticas de código. Este site é o meu portfólio pessoal,
+          construído inteiramente com HTML5 semântico e CSS3, sem frameworks nem JavaScript.
+        </p>
+        <p style="margin-top: 1rem;">
+          <a href="contact.html" class="btn-destaque">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Fale comigo
+          </a>
+        </p>
+      </div>
+      <img
+        class="hero__avatar"
+        src="assets/img/avatar.jpg"
+        alt="Fotografia de perfil de Frederico Albino Junior, sorrindo, fundo neutro"
+        width="220"
+        height="220">
+    </section>
+
+    <section aria-labelledby="competencias-titulo">
+      <h2 id="competencias-titulo" class="titulo-secao">O que eu faço</h2>
+      <p>
+        Trabalho principalmente com HTML5, CSS3 (Flexbox e Grid), boas práticas de acessibilidade e
+        organização de projetos em repositórios Git. Estou também a aprofundar conhecimentos em
+        bases de dados e lógica de programação.
+      </p>
+    </section>
+
+    <section aria-labelledby="apresentacao-titulo">
+      <h2 id="apresentacao-titulo" class="titulo-secao">Vídeo de apresentação</h2>
+      <p>Um pequeno vídeo onde me apresento e falo sobre os meus objetivos académicos.</p>
+      <div class="container-video">
+        <video controls poster="assets/img/poster-video.jpg" width="720" height="405">
+          <source src="assets/video/apresentacao.mp4" type="video/mp4">
+          <source src="assets/video/apresentacao.webm" type="video/webm">
+          O seu navegador não suporta a reprodução de vídeo HTML5.
+        </video>
+      </div>
+    </section>
+
+    <section aria-labelledby="audio-titulo">
+      <h2 id="audio-titulo" class="titulo-secao">Apresentação em áudio</h2>
+      <p>Prefere ouvir? Deixo aqui uma breve apresentação em áudio.</p>
+      <div class="bloco-audio">
+        <audio controls>
+          <source src="assets/audio/apresentacao.mp3" type="audio/mpeg">
+          <source src="assets/audio/apresentacao.ogg" type="audio/ogg">
+          O seu navegador não suporta a reprodução de áudio HTML5.
+        </audio>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__container">
+      <div>
+        <h2 style="color:#fff; font-size:1.1rem;">Contactos</h2>
+        <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:frederico.albino@exemplo.com">frederico.albino@exemplo.com</a></p>
+        <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+258840000000">+258 84 000 0000</a></p>
+      </div>
+      <div>
+        <h2 style="color:#fff; font-size:1.1rem;">Redes sociais</h2>
+        <div class="rodape__redes">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <p class="rodape__assinatura">Desenvolvido por Frederico Albino Junior</p>
+    </div>
+  </footer>
+
+</body>
+</html>
