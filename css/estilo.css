@@ -1,0 +1,601 @@
+/* =======================================================================
+   ESTILO.CSS — Folha de estilos principal (partilhada por todas as páginas)
+   Projeto: Site de Currículo Pessoal — HTML5 + CSS3 puro
+   ======================================================================= */
+
+/* -----------------------------------------------------------------------
+   1. VARIÁVEIS CSS (custom properties)
+   Centralizam cores e espaçamentos para consistência e fácil manutenção.
+----------------------------------------------------------------------- */
+:root {
+  --cor-primaria: #2b6cb0;
+  --cor-primaria-escura: #1a4971;
+  --cor-secundaria: #f6ad55;
+  --cor-fundo: #f7f9fc;
+  --cor-fundo-alt: #ffffff;
+  --cor-texto: #23272f;
+  --cor-texto-claro: #5a6472;
+  --cor-borda: #e2e8f0;
+  --cor-sombra: rgba(20, 30, 60, 0.12);
+
+  --fonte-titulo: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --fonte-corpo: 'Inter', 'Segoe UI', Arial, sans-serif;
+
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 1rem;
+  --espaco-md: 1.5rem;
+  --espaco-lg: 2.5rem;
+  --espaco-xl: 4rem;
+
+  --raio-borda: 12px;
+  --transicao-padrao: 0.25s ease-in-out;
+}
+
+/* -----------------------------------------------------------------------
+   2. RESET BÁSICO E MODELO DE CAIXA
+----------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-primaria-escura);
+  line-height: 1.25;
+}
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: color var(--transicao-padrao);
+}
+
+/* -----------------------------------------------------------------------
+   3. POSICIONAMENTO — comentário explicativo (exigência 5.2)
+   -----------------------------------------------------------------------
+   static   -> comportamento normal do fluxo do documento; top/left/etc.
+               não têm efeito. É o valor padrão de todos os elementos.
+   relative -> mantém o elemento no fluxo normal, mas permite deslocá-lo
+               visualmente (top/left/right/bottom) em relação à sua
+               própria posição original, sem afetar os outros elementos.
+   absolute -> remove o elemento do fluxo normal; é posicionado em
+               relação ao ancestral mais próximo com position diferente
+               de static (ou ao <html> se não existir nenhum).
+   fixed    -> remove o elemento do fluxo e posiciona-o em relação à
+               janela do navegador (viewport); mantém-se fixo com scroll.
+   sticky   -> híbrido entre relative e fixed: comporta-se como relative
+               até a página fazer scroll até um limiar (ex: top:0),
+               passando então a comportar-se como fixed dentro do pai.
+   Neste projeto usa-se position: sticky no <header>, para o menu de
+   navegação acompanhar o utilizador durante o scroll.
+----------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------
+   4. HEADER E NAVEGAÇÃO
+----------------------------------------------------------------------- */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(120deg, var(--cor-primaria), var(--cor-primaria-escura));
+  color: #fff;
+  box-shadow: 0 2px 10px var(--cor-sombra);
+}
+
+.cabecalho__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--espaco-sm) var(--espaco-md);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-sm);
+}
+
+.cabecalho__logo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.cabecalho__logo span { color: var(--cor-secundaria); }
+
+.menu-principal {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-xs);
+}
+
+.menu-principal > li { position: relative; }
+
+.menu-principal a {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  color: #f0f4fa;
+  font-weight: 500;
+}
+
+.menu-principal a:hover,
+.menu-principal a:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--cor-secundaria);
+}
+
+.menu-principal a.ativo {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-primaria-escura);
+  font-weight: 700;
+}
+
+.menu-principal a.ativo::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  margin: 4px auto 0;
+  background-color: var(--cor-primaria-escura);
+  border-radius: 2px;
+}
+
+/* -----------------------------------------------------------------------
+   5. LAYOUT GERAL / SECÇÕES
+----------------------------------------------------------------------- */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--espaco-lg) var(--espaco-md);
+}
+
+section { margin-bottom: var(--espaco-xl); }
+
+h2 + p {
+  margin-top: var(--espaco-xs);
+  color: var(--cor-texto-claro);
+}
+
+.titulo-secao {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.2rem);
+  margin-bottom: var(--espaco-md);
+  position: relative;
+  padding-bottom: var(--espaco-xs);
+}
+
+.titulo-secao::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--cor-secundaria);
+  border-radius: 50%;
+  margin-right: 0.6rem;
+}
+
+/* -----------------------------------------------------------------------
+   6. HERO (HOME)
+----------------------------------------------------------------------- */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-lg);
+  padding: var(--espaco-lg) 0;
+}
+
+.hero__texto { flex: 1 1 320px; }
+
+.hero__avatar {
+  flex: 0 0 auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--cor-fundo-alt);
+  box-shadow: 0 10px 30px var(--cor-sombra);
+  animation: flutuar 4s ease-in-out infinite;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: var(--cor-primaria);
+  font-style: italic;
+  margin: var(--espaco-xs) 0 var(--espaco-sm);
+}
+
+.btn-destaque {
+  display: inline-block;
+  background: linear-gradient(120deg, var(--cor-secundaria), #ed8936);
+  color: var(--cor-primaria-escura);
+  font-weight: 700;
+  padding: 0.85rem 1.8rem;
+  border-radius: 50px;
+  box-shadow: 0 6px 18px rgba(237, 137, 54, 0.35);
+  transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
+}
+
+.btn-destaque:hover,
+.btn-destaque:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(237, 137, 54, 0.45);
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* -----------------------------------------------------------------------
+   7. TABELA DE COMPETÊNCIAS (ABOUT)
+----------------------------------------------------------------------- */
+.tabela-competencias {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--cor-fundo-alt);
+  box-shadow: 0 4px 14px var(--cor-sombra);
+  border-radius: var(--raio-borda);
+  overflow: hidden;
+}
+
+.tabela-competencias caption {
+  text-align: left;
+  font-weight: 700;
+  padding: var(--espaco-xs);
+  color: var(--cor-primaria-escura);
+}
+
+.tabela-competencias th,
+.tabela-competencias td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--cor-borda);
+  text-align: left;
+}
+
+.tabela-competencias thead th {
+  background-color: var(--cor-primaria);
+  color: #fff;
+}
+
+.tabela-competencias tbody tr:nth-child(even) { background-color: #f0f4fa; }
+.tabela-competencias tbody tr:hover { background-color: #e6f0fb; }
+.tabela-competencias tbody tr:last-child td { border-bottom: none; }
+
+.lista-formacao,
+.lista-tecnica {
+  margin: var(--espaco-sm) 0 var(--espaco-md) var(--espaco-md);
+}
+
+.lista-formacao li,
+.lista-tecnica li { margin-bottom: 0.4rem; }
+
+.lista-formacao li:first-child {
+  font-weight: 700;
+  color: var(--cor-primaria-escura);
+}
+
+figure.certificado {
+  background: var(--cor-fundo-alt);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espaco-xs);
+  box-shadow: 0 4px 12px var(--cor-sombra);
+  max-width: 260px;
+}
+
+figure.certificado img { border-radius: 8px; }
+
+figure.certificado figcaption {
+  margin-top: var(--espaco-xs);
+  font-size: 0.9rem;
+  color: var(--cor-texto-claro);
+  text-align: center;
+}
+
+/* -----------------------------------------------------------------------
+   8. GRELHA DE PROJETOS (PORTFOLIO) — CSS GRID
+----------------------------------------------------------------------- */
+.grelha-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--espaco-md);
+}
+
+.card-projeto {
+  background-color: var(--cor-fundo-alt);
+  border-radius: var(--raio-borda);
+  overflow: hidden;
+  box-shadow: 0 4px 14px var(--cor-sombra);
+  transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-projeto:hover,
+.card-projeto:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px var(--cor-sombra);
+}
+
+.card-projeto figure { aspect-ratio: 16 / 9; overflow: hidden; }
+
+.card-projeto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicao-padrao);
+}
+
+.card-projeto:hover img { transform: scale(1.06); }
+
+.card-projeto__corpo {
+  padding: var(--espaco-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.card-projeto__corpo h3 { font-size: 1.15rem; }
+
+.tags-projeto { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+
+.tags-projeto span {
+  background-color: #eef4fc;
+  color: var(--cor-primaria);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+/* -----------------------------------------------------------------------
+   9. HOBBIES — FLEXBOX
+----------------------------------------------------------------------- */
+.lista-hobbies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--espaco-md);
+}
+
+.card-hobby {
+  flex: 1 1 240px;
+  max-width: 280px;
+  background-color: var(--cor-fundo-alt);
+  border-radius: var(--raio-borda);
+  padding: var(--espaco-md);
+  text-align: center;
+  box-shadow: 0 4px 14px var(--cor-sombra);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  transition: transform var(--transicao-padrao);
+}
+
+.card-hobby:hover { transform: translateY(-6px) rotate(-1deg); }
+
+.card-hobby img { width: 64px; height: 64px; object-fit: contain; }
+
+.icone-hobby {
+  font-size: 2.6rem;
+  color: var(--cor-primaria);
+}
+
+.bloco-audio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+  background-color: var(--cor-fundo-alt);
+  padding: var(--espaco-md);
+  border-radius: var(--raio-borda);
+  box-shadow: 0 4px 14px var(--cor-sombra);
+  max-width: 480px;
+}
+
+audio { width: 100%; }
+
+/* -----------------------------------------------------------------------
+   10. VÍDEO
+----------------------------------------------------------------------- */
+.container-video { max-width: 720px; margin: 0 auto; }
+
+.container-video video,
+.container-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--raio-borda);
+  box-shadow: 0 6px 20px var(--cor-sombra);
+  border: none;
+}
+
+/* -----------------------------------------------------------------------
+   11. FORMULÁRIO DE CONTACTO
+----------------------------------------------------------------------- */
+.formulario-contacto {
+  background-color: var(--cor-fundo-alt);
+  padding: var(--espaco-lg);
+  border-radius: var(--raio-borda);
+  box-shadow: 0 6px 20px var(--cor-sombra);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.formulario-contacto fieldset {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espaco-md);
+  margin-bottom: var(--espaco-md);
+}
+
+.formulario-contacto legend {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  color: var(--cor-primaria-escura);
+  padding: 0 0.5rem;
+}
+
+.campo {
+  margin-bottom: var(--espaco-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo label { font-weight: 600; font-size: 0.95rem; }
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="tel"],
+.campo input[type="date"],
+.campo input[type="number"],
+.campo input[type="file"],
+.campo select,
+.campo textarea {
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  background-color: var(--cor-fundo);
+  transition: border-color var(--transicao-padrao), box-shadow var(--transicao-padrao);
+}
+
+.campo textarea { resize: vertical; min-height: 120px; }
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.2);
+}
+
+.campo input:invalid:not(:placeholder-shown),
+.campo textarea:invalid:not(:placeholder-shown) { border-color: #e53e3e; }
+
+.campo input:valid:not(:placeholder-shown),
+.campo textarea:valid:not(:placeholder-shown) { border-color: #38a169; }
+
+.grupo-opcoes { display: flex; flex-wrap: wrap; gap: var(--espaco-sm); }
+
+.opcao { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
+
+.opcao input[type="radio"],
+.opcao input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--cor-primaria);
+  position: relative;
+  cursor: pointer;
+  transition: background-color var(--transicao-padrao);
+}
+
+.opcao input[type="radio"] { border-radius: 50%; }
+.opcao input[type="checkbox"] { border-radius: 4px; }
+
+.opcao input[type="radio"]:checked,
+.opcao input[type="checkbox"]:checked { background-color: var(--cor-primaria); }
+
+.opcao input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 5px; left: 5px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.opcao input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: -3px; left: 2px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.btn-enviar {
+  background: linear-gradient(120deg, var(--cor-primaria), var(--cor-primaria-escura));
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
+}
+
+.btn-enviar:hover,
+.btn-enviar:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px var(--cor-sombra);
+}
+
+.aside-contacto {
+  background-color: #eef4fc;
+  padding: var(--espaco-md);
+  border-radius: var(--raio-borda);
+  margin-bottom: var(--espaco-md);
+}
+
+/* -----------------------------------------------------------------------
+   12. FOOTER
+----------------------------------------------------------------------- */
+.rodape {
+  background-color: var(--cor-primaria-escura);
+  color: #dce6f2;
+  padding: var(--espaco-lg) var(--espaco-md);
+  margin-top: var(--espaco-xl);
+}
+
+.rodape__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--espaco-md);
+}
+
+.rodape a { color: #cfe0f5; }
+.rodape a:hover { color: var(--cor-secundaria); }
+
+.rodape__redes { display: flex; gap: var(--espaco-sm); font-size: 1.3rem; }
+
+.rodape__assinatura {
+  width: 100%;
+  text-align: center;
+  margin-top: var(--espaco-md);
+  padding-top: var(--espaco-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.9rem;
+  color: #a9bcd6;
+}

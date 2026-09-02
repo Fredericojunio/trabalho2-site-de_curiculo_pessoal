@@ -1,0 +1,136 @@
+/* =======================================================================
+   RESPONSIVO.CSS — Media queries (abordagem mobile-first)
+   O ficheiro estilo.css já contém os estilos base pensados para ecrãs
+   pequenos; aqui ampliamos o layout progressivamente para tablet e
+   desktop, conforme a abordagem "mobile-first".
+   ======================================================================= */
+
+/* -----------------------------------------------------------------------
+   BASE (até 480px) — telemóveis
+   Ajustes finos para o menor breakpoint, garantindo legibilidade e
+   toque confortável em ecrãs muito pequenos.
+----------------------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+  .cabecalho__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-principal {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .menu-principal a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero__avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  main {
+    padding: var(--espaco-md) var(--espaco-sm);
+  }
+
+  .titulo-secao {
+    font-size: 1.4rem;
+  }
+
+  .formulario-contacto {
+    padding: var(--espaco-md);
+  }
+
+  .rodape__container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rodape__redes {
+    justify-content: center;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   TABLET (até 768px)
+   Nesta faixa o menu ainda ocupa toda a largura, mas os cartões passam
+   a ter mais espaço e o texto cresce ligeiramente (unidade rem).
+----------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .cabecalho__logo {
+    font-size: 1.2rem;
+  }
+
+  .grelha-projetos {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .lista-hobbies {
+    justify-content: space-around;
+  }
+
+  .hero {
+    gap: var(--espaco-md);
+  }
+
+  .aside-contacto,
+  .formulario-contacto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tabela-competencias {
+    font-size: 0.9rem;
+  }
+
+  .tabela-competencias th,
+  .tabela-competencias td {
+    padding: 0.55rem 0.7rem;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   DESKTOP (a partir de 1024px)
+   Aproveitamos o espaço extra: hero com mais respiro, grelha de
+   projetos com mais colunas, tipografia em vw combinada com rem.
+----------------------------------------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .hero {
+    gap: var(--espaco-xl);
+    padding: var(--espaco-xl) 0;
+  }
+
+  .hero__avatar {
+    width: 260px;
+    height: 260px;
+  }
+
+  .grelha-projetos {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--espaco-lg);
+  }
+
+  main {
+    padding: var(--espaco-xl) var(--espaco-md);
+  }
+}
+
+/* -----------------------------------------------------------------------
+   TELAS MUITO LARGAS (a partir de 1440px)
+   Evita que o texto fique demasiado esticado, controlando a largura
+   máxima do conteúdo com unidade fixa combinada com margin auto.
+----------------------------------------------------------------------- */
+@media screen and (min-width: 1440px) {
+  main,
+  .cabecalho__container,
+  .rodape__container {
+    max-width: 1320px;
+  }
+}
