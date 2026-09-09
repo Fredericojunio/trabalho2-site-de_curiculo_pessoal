@@ -15,6 +15,9 @@ JavaScript. Toda a interatividade (menu, destaque da página ativa, hover, valid
 2. Abrir o ficheiro `index.html` diretamente no navegador (não é necessário servidor).
 3. Navegar pelo menu no topo para aceder às restantes páginas.
 
+   
+5. https://fredericojunio.github.io/trabalho2-site-de_curiculo_pessoal/
+
 ## Páginas do site
 | Página | Ficheiro | Conteúdo |
 |---|---|---|
