@@ -1,33 +1,42 @@
-# Site de Currículo Pessoal — Frederico Albino Junior
+de → refinamentos),
+e não como um único commit final.
+# Meu Currículo — Site Pessoal (HTML5 + CSS3 puro)
 
-## Estudante
-- **Nome completo:** Frederico Albino Junior
-- **Turma:** 2º Ano — Licenciatura em Informática — Programação de Design Web
+**Estudante:** Frederico Albino Junior 
+**Turma:** 2º Ano — Licenciatura em Informática
+**Disciplina:** Programação de Design Web
+**Trabalho Prático I** — Site de Currículo Pessoal
+
+---
+
+### 🔗 Site online (GitHub Pages)
+## **[👉 Acede ao site aqui](https://fredericojunio.github.io/trabalho2-site-de_curiculo_pessoal/)**
+`https://fredericojunio.github.io/trabalho2-site-de_curiculo_pessoal/`
+
+---
 
 ## Descrição do projeto
-Site pessoal de currículo (portfólio), constituído por 5 páginas HTML interligadas, construído
-**exclusivamente com HTML5 e CSS3 puro** — sem frameworks CSS (Bootstrap, Tailwind, etc.) e sem
-JavaScript. Toda a interatividade (menu, destaque da página ativa, hover, validação de formulário)
-é conseguida apenas com HTML e CSS (pseudo-classes, seletores e atributos nativos de validação).
 
-### Como visualizar o site
+Site pessoal de currículo/portfólio composto por 5 páginas HTML interligadas,
+estilizado exclusivamente com CSS3 puro (sem Bootstrap, Tailwind, Bulma ou
+qualquer framework) e sem uma única linha de JavaScript. Toda a
+interatividade (menu ativo, formulário, `<details>`) é conseguida apenas com
+HTML5 e CSS3, através de seletores, pseudo-classes e elementos nativos.
+
+### Como visualizar
+
 1. Clonar ou descarregar este repositório.
-2. Abrir o ficheiro `index.html` diretamente no navegador (não é necessário servidor).
-3. Navegar pelo menu no topo para aceder às restantes páginas.
+2. Abrir o ficheiro `index.html` diretamente no navegador (não é necessário
+   servidor nem instalação de dependências).
+3. Navegar pelo site através do menu no topo, presente em todas as páginas.
 
-   
-5. https://fredericojunio.github.io/trabalho2-site-de_curiculo_pessoal/
-
-## Páginas do site
-| Página | Ficheiro | Conteúdo |
-|---|---|---|
-| Início | `index.html` | Apresentação pessoal, tagline, call-to-action, vídeo e áudio de apresentação |
-| Currículo | `about.html` | Formação académica, experiência, competências técnicas, tabela de proficiência, certificados |
-| Portfólio | `portfolio.html` | Grelha de projetos (CSS Grid) e vídeo de demonstração via YouTube |
-| Hobbies | `hobbies.html` | Cartões de hobbies organizados com Flexbox e faixa de áudio |
-| Contacto | `contact.html` | Formulário completo com validação nativa HTML5 |
+> Nota: os ficheiros de vídeo/áudio locais referenciados em `assets/video/`
+> e `assets/audio/` são placeholders — substituir pelos ficheiros reais do
+> estudante antes da entrega final. O vídeo também está incorporado via
+> YouTube (`<iframe>`) na Home como alternativa.
 
 ## Estrutura de pastas
+
 ```
 meu-curriculo/
 ├── index.html
@@ -39,82 +48,79 @@ meu-curriculo/
 │   ├── estilo.css
 │   └── responsivo.css
 ├── assets/
-│   ├── img/        (fotos, ícones, certificados, capturas de projetos)
-│   ├── video/       (vídeo local de apresentação, se usado)
-│   ├── audio/        (ficheiros .mp3/.ogg usados na tag <audio>)
-│   └── ficheiros/    (CV em PDF e outros anexos)
+│   ├── img/
+│   ├── video/
+│   ├── audio/
+│   └── ficheiros/
 └── README.md
 ```
 
-> **Nota importante:** o código HTML já referencia os ficheiros de imagem, vídeo e áudio nos
-> caminhos corretos dentro de `assets/`. É necessário adicionar os ficheiros reais (fotos próprias,
-> um pequeno vídeo `.mp4`/`.webm` e um áudio `.mp3`/`.ogg`) nessas pastas antes da entrega, e
-> substituir o ID do vídeo do YouTube em `portfolio.html` pelo ID real de um vídeo do seu canal.
+## Páginas do site
 
-## Principais tags HTML e recursos CSS utilizados
+| Página | Conteúdo |
+|---|---|
+| `index.html` (Home) | Apresentação pessoal, avatar, tagline, resumo de competências, botão CTA para a página de contacto, vídeo de apresentação nativo (`<video>`) e incorporado via YouTube (`<iframe>`). |
+| `about.html` (Currículo) | Formação académica e experiência em listas (`<ul>`/`<ol>`), tabela de competências técnicas com `colspan`/`rowspan`, certificados em `<figure>`/`<figcaption>`. |
+| `portfolio.html` (Portfólio) | Grelha de 4 projetos em cartões, construída com **CSS Grid** (`grid-template-columns`, `repeat()`, `minmax()`, `gap`), vídeo de demonstração de um projeto. |
+| `hobbies.html` (Hobbies) | Cartões de hobbies organizados com **Flexbox** (`flex-direction`, `flex-wrap`, `justify-content`, `align-items`) e faixa de áudio (`<audio>`). |
+| `contact.html` (Contacto) | Formulário completo com todos os tipos de campo pedidos e validação nativa HTML5, agrupado em `<fieldset>`/`<legend>`. |
 
-### HTML5 semântico
-- `<header>` / `<nav>` / `<main>` / `<section>` / `<article>` / `<aside>` / `<footer>` — organizam o
-  documento em regiões semânticas, substituindo o uso indiscriminado de `<div>` ("div soup").
-- `<figure>` / `<figcaption>` — associam uma imagem à sua legenda de forma semanticamente correta
-  (usado nos certificados e projetos do portfólio).
-- `<video controls poster>` com múltiplos `<source type="...">` — vídeo nativo com pré-visualização
-  e suporte a mais de um formato de ficheiro.
-- `<audio controls>` com `<source type="audio/mpeg">` — reprodução de áudio nativa do navegador.
-- `<fieldset>` / `<legend>` — agrupam campos relacionados do formulário de contacto com um título
-  semântico, melhorando a acessibilidade.
-- `<label for="...">` — associa cada campo do formulário à sua descrição textual, essencial para
-  leitores de ecrã e para permitir clicar no texto para focar o campo.
+## Principais tags HTML e propriedades CSS utilizadas
 
-### Validação HTML5 nativa (sem JavaScript)
-- `required` — impede o envio do formulário sem preencher o campo.
-- `minlength` / `maxlength` — limitam o número de caracteres (nome e mensagem).
-- `pattern` — valida o formato do número de telefone com expressão regular.
-- `min` / `max` — limitam a data mínima selecionável e o intervalo de idade.
-- `type="email"` — o navegador valida automaticamente o formato de email.
-- `accept` — restringe os tipos de ficheiro aceites no campo de upload.
+### HTML semântico
+- `<header>` / `<nav>` / `<main>` / `<section>` / `<article>` / `<footer>` — organizam o documento em regiões semânticas claras, melhorando a acessibilidade e o SEO, em substituição de "div soup".
+- `<figure>` / `<figcaption>` — associam uma imagem à sua legenda de forma semântica (certificados e projetos).
+- `<video>` com `controls`, `poster` e `<source type="...">` — permite reprodução nativa de vídeo com pré-visualização e múltiplos formatos de fallback.
+- `<audio>` com `controls` e `<source type="...">` — reprodução nativa de áudio com fallback de formato.
+- `<details>` / `<summary>` — mostra/esconde conteúdo extra (link do YouTube) sem qualquer JavaScript.
+- `<fieldset>` / `<legend>` — agrupam campos relacionados do formulário com um título acessível.
+- `<table>` com `<thead>`/`<tbody>`, `colspan`, `rowspan` — organiza a tabela de competências de forma estruturada.
 
-### CSS3 — layout
-- **Flexbox** (`display:flex`, `flex-direction`, `flex-wrap`, `justify-content`, `align-items`) —
-  usado no menu do cabeçalho e, de forma explícita e obrigatória, na grelha de cartões da página
-  Hobbies.
-- **CSS Grid** (`display:grid`, `grid-template-columns`, `repeat()`, `minmax()`, `gap`) — usado na
-  grelha de projetos do Portfólio, criando um layout responsivo sem media queries adicionais.
-- **`position: sticky`** — aplicado ao `<header>`, mantendo o menu visível durante o scroll. A
-  diferença entre `static`, `relative`, `absolute`, `fixed` e `sticky` está explicada em comentário
-  no topo de `css/estilo.css`.
+### CSS — seletores e pseudo-classes
+- **Seletores avançados**: descendentes (`.menu a`), filho direto (`.menu > li > a`), irmão adjacente (`h2 + p`) e de atributo (`input[type="email"]`, `a[href^="http"]`) — permitem estilizar elementos com precisão, sem adicionar classes extra a cada um.
+- **Pseudo-classes**: `:hover`, `:focus`, `:first-child`, `:last-child`, `:nth-child()`, `:checked`, `:valid`/`:invalid` — usadas para feedback visual e para estilizar radios/checkboxes customizados apenas com CSS.
+- **Pseudo-elementos**: `::before` e `::after` — usados no ícone decorativo do logótipo e no sublinhado animado dos links do menu.
 
-### CSS3 — seletores e pseudo-classes/elementos
-- Seletor descendente, filho direto (`>`), irmão adjacente (`+`) e seletor de atributo
-  (`input[type="email"]`) — usados para estilizar o formulário e o menu sem adicionar classes extra.
-- `:hover`, `:focus`, `:first-child`, `:last-child`, `:nth-child()` — usados em links, cartões e na
-  tabela de competências (zebra striping).
-- `::before` e `::after` — usados como elementos decorativos no título das secções e no indicador do
-  link ativo do menu.
+### CSS — layout
+- **Flexbox** (`hobbies.html`) — `display: flex`, `flex-wrap: wrap`, `justify-content: space-between`, `align-items: stretch` distribuem os cartões de hobbies de forma flexível em qualquer largura de ecrã.
+- **CSS Grid** (`portfolio.html`) — `display: grid`, `grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))`, `gap` criam uma grelha de cartões que se adapta automaticamente ao número de colunas possível.
+- **`position: sticky`** — aplicado ao `<header>` para que o menu permaneça visível durante o scroll. A diferença entre `static`, `relative`, `absolute`, `fixed` e `sticky` está explicada em comentário no início da secção de header em `css/estilo.css`.
 
-### CSS3 — estilo visual
-- **Variáveis CSS** (`:root { --cor-primaria: ... }`) — centralizam cores, espaçamentos e fontes.
-- **`transition`** — suaviza o efeito hover nos cartões e botões.
-- **`@keyframes`** — cria uma animação discreta de flutuação no avatar da Home.
-- **`linear-gradient`** e **`box-shadow`/`text-shadow`** — usados no cabeçalho, botões e cartões para
-  dar profundidade visual.
-- **Tipografia**: `Poppins` (títulos) e `Inter` (corpo de texto), importadas via Google Fonts, com
-  pilha de alternativas (`font-family: 'Poppins', 'Segoe UI', Arial, sans-serif`).
+### CSS — responsividade
+- `<meta name="viewport" content="width=device-width, initial-scale=1.0">` presente em todas as páginas.
+- Duas media queries principais em `css/responsivo.css`: `max-width: 480px` (telemóvel) e `max-width: 768px` (tablet), seguindo abordagem **mobile-first** (estilos base pensados para ecrã pequeno, depois ajustados/ampliados).
+- Unidades relativas (`rem`, `%`, `vw`/`vh`) combinadas com unidades fixas (`px`) sempre que a precisão visual o justifica (ex: bordas de 1px).
 
-### Responsividade
-- Meta viewport (`<meta name="viewport" content="width=device-width, initial-scale=1.0">`) em todas
-  as páginas.
-- Abordagem **mobile-first**: estilos base pensados para ecrã pequeno em `estilo.css`, ampliados em
-  `responsivo.css` com media queries em `max-width: 480px` (telemóvel), `max-width: 768px` (tablet) e
-  `min-width: 1024px` / `min-width: 1440px` (desktop/ecrãs largos).
-- Combinação de unidades relativas (`rem`, `%`, `vw`, `vh`) com unidades fixas (`px`), justificada
-  caso a caso nos comentários do CSS.
+### CSS — estilo visual avançado
+- **Variáveis CSS** (`:root`) — centralizam cores, tipografia e espaçamentos, facilitando a consistência e manutenção do design.
+- **Transições** (`transition`) — usadas nos links do menu, botões e cartões, para uma resposta suave ao `:hover`/`:focus`.
+- **Animação** (`@keyframes surgir`) — efeito discreto de entrada (fade + slide) aplicado à secção hero da Home.
+- **Gradientes e sombras** — `linear-gradient` no fundo do hero; `box-shadow` em cartões e header; `text-shadow` reservado para destaques tipográficos.
+- **Tipografia** — pilha de fontes (`font-family`) com Google Fonts (Poppins para títulos, Inter para o corpo) e alternativas de sistema como fallback.
 
-## Ferramentas externas permitidas
-- **Google Fonts** — famílias `Poppins` e `Inter`, importadas via `<link>`.
-- **Font Awesome (CDN)** — ícones usados no rodapé e nos botões (não é um framework de layout).
+## Formulário e validação (contact.html)
 
-## Sobre o repositório
-Este repositório deve ser publicado com histórico de commits que reflita a evolução real do
-desenvolvimento (estrutura inicial → páginas HTML → estilos base → responsividade → refinamentos),
-e não como um único commit final.
+Todos os campos usam apenas atributos nativos do HTML5 para validação —
+sem JavaScript nem bibliotecas:
+
+- `required` — nome, email, motivo, mensagem.
+- `minlength` / `maxlength` — nome (mín. 3) e mensagem (mín. 10, máx. 600).
+- `pattern` — telefone, validado com expressão regular para números moçambicanos.
+- `min` / `max` — idade (15 a 99).
+- `type="email"` — validação automática do formato de email pelo navegador.
+- `type="file"` com `accept=".pdf"` — restringe o tipo de ficheiro aceite no anexo.
+- `<select>` obrigatório e grupos de `radio`/`checkbox` estilizados via CSS (sem aparência padrão do navegador, usando a técnica de esconder o input e estilizar o `<label>` associado com `:checked`).
+
+## Acessibilidade
+
+- Todas as imagens têm atributo `alt` descritivo.
+- Todos os campos do formulário têm `<label for="...">` associado ao respetivo `id`.
+- Uso de `aria-label`, `aria-current="page"`, `aria-labelledby` e `role="radiogroup"`/`role="group"` onde relevante.
+- Hierarquia de headings coerente: um único `<h1>` por página.
+- Contraste de cor cuidado entre texto e fundo em todas as secções.
+
+## Notas finais
+
+Este é um projeto académico desenvolvido para a disciplina de Programação
+de Design Web. Não utiliza frameworks de CSS, geradores automáticos de site
+nem JavaScript, conforme exigido no enunciado do trabalho.
